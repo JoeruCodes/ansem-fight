@@ -20,4 +20,14 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
+  build: {
+    manifest: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name][extname]',
+        entryFileNames: 'assets/[name].js',
+        chunkFileNames: 'assets/[name].js',
+      },
+    },
+  },
 });
