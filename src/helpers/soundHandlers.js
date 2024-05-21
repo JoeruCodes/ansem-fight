@@ -1,9 +1,9 @@
 import { Howl, Howler } from "howler";
-import punchSound from "../assets/punch.m4a";
-import winSound from "../assets/win.m4a";
-import loseSound from "../assets/lose.m4a";
-import bellSound from "../assets/bell.m4a";
-import t3Sound from "../assets/tier3powerup.m4a";
+import punchSound from "/assets/punch.m4a";
+import winSound from "/assets/win.m4a";
+import loseSound from "/assets/lose.m4a";
+import bellSound from "/assets/bell.m4a";
+import t3Sound from "/assets/tier3powerup.m4a";
 export function playSound(sound) {
   let sound;
   switch (soundType) {

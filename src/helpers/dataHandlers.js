@@ -1,7 +1,7 @@
 import sign from "jwt-encode";
 
 const ngrokUrl = 'https://6070-103-21-125-86.ngrok-free.app';
-//const ngrokUrl = 'http://localhost:5000';
+// const ngrokUrl = 'http://localhost:5000';
 
 export const handleSendData = async (randPunches, wif, referredBy, wallet) => {
   console.log('randPunches:', randPunches);

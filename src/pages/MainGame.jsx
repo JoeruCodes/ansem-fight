@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import init, { render } from "ansem-wasm";
 import { Context } from "../App";
-import t3_cook_win from "../assets/t3_cook_win.png";
+import t3_cook_win from "/assets/t3_cook_win.png";
 import { generateLink } from "../helpers/generateLink";
 import GameCover from "./GameCover";
 import GameOverPopUp from "./GameOverPopUp";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { getLeaderboardData, handleSendData } from "../helpers/dataHandlers";
 import { WIN_PUNCHES } from "./gameConfig";
-import winImage from "../assets/win.png";
-import loseImage from "../assets/lose.png";
-import loseImage_cook from "../assets/lose_cook.png";
+import winImage from "/assets/win.png";
+import loseImage from "/assets/lose.png";
+import loseImage_cook from "/assets/lose_cook.png";
 const MainGame = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {

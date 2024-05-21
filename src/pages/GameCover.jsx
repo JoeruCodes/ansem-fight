@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import start from "../assets/start.png";
+import start from "/assets/start.png";
 import DepositButton from "./DepositButton";
 import CharacterSelection from "./CharacterSelection";
 

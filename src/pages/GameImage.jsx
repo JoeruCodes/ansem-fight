@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ansem from "../assets/start.png";
+import ansem from "/assets/start.png";
 import DepositButton from "./DepositButton";
 import CharacterSelection from "./CharacterSelection";
 import React, { useState, useEffect, useRef } from "react";
@@ -8,7 +8,7 @@ import { SoundTypes, sounds } from "./gameConfig"; // Assuming these are extract
 import { Howl } from "howler";
 
 import "./Homepage.css";
-import t3_cook_win from "../assets/t3_cook_win.png";
+import t3_cook_win from "/assets/t3_cook_win.png";
 import { Context } from "../App";
 
 import "@solana/wallet-adapter-react-ui/styles.css";

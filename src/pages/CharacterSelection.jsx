@@ -1,12 +1,12 @@
 import { useWallet } from "@solana/wallet-adapter-react";
 import WalletSection from "./WalletSection";
 import DepositButton from "./DepositButton";
-import ansem from '../assets/StartGame11.png';
+import ansem from '/assets/StartGame11.png';
 import { Context } from "../App";
 import { useContext, useState } from "react";
 import DepositWifPopUp from "./DepostiWifPopUp";
 import MainGame from "./MainGame";
-import kook from "../assets/cook.png";
+import kook from "/assets/cook.png";
 import * as SolanaWeb3 from "@solana/web3.js";
 import * as splToken from "@solana/spl-token";
 import { transfer } from "../helpers/tokenTransfer";

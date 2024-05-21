@@ -1,5 +1,5 @@
 .image-container {
-  background-image: url("../assets/Background.png");
+  background-image: url("/assets/Background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@
   z-index: 100;
 }
 .image-container2 {
-  background-image: url("../assets/Background.png");
+  background-image: url("/assets/Background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "8bit";
-  src: url("../assets/8-bit.ttf") format("truetype");
+  src: url("/assets/8-bit.ttf") format("truetype");
 }
 
 .cameraShake {
