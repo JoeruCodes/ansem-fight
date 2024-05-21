@@ -45,7 +45,7 @@ function HomePage() {
   };
   const fetchInitialLeaderboard = async () => {
     try {
-      const leaderboardResponse = await fetch('http://localhost:5000/api/leaderboard');
+      const leaderboardResponse = await fetch('https://ansem-backend-production.up.railway.app/api/leaderboard');
       if (!leaderboardResponse.ok) {
         throw new Error('Failed to fetch leaderboard data');
       }
