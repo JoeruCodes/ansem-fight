@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ConnectionProvider,
   WalletProvider,
@@ -9,6 +10,7 @@ import { clusterApiUrl } from "@solana/web3.js";
 
 import "@solana/wallet-adapter-react-ui/styles.css";
 import HomePage from "./pages/HomePage";
+import ReferPage from "./ReferPage";
 import "./App.css";
 export const Context = React.createContext();
 function App() {
@@ -51,7 +53,15 @@ function App() {
               setReferredBy
             }}
           >
-            <HomePage />
+
+  <Routes>
+    <Route path="/refer/:variable" element={<ReferPage />} />
+    <Route path="/" element={<HomePage />} />
+  </Routes>
+
+
+
+            {/* <HomePage /> */}
           </Context.Provider>
         </WalletModalProvider>
       </WalletProvider>
