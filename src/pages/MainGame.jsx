@@ -11,6 +11,7 @@ import { WIN_PUNCHES } from "./gameConfig";
 import winImage from "../assets/win.png";
 import loseImage from "../assets/lose.png";
 import loseImage_cook from "../assets/lose_cook.png";
+import mainfest from "../../dist/.vite/manifest.json";
 const MainGame = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
@@ -28,7 +29,7 @@ const MainGame = () => {
   
   const onLoad = async () => {
     await init();
-    const npunch = await render(player, wifAmount);
+    const npunch = await render(player, wifAmount, JSON.stringify(mainfest));
     setSNSLink(generateLink(npunch, wifAmount, tweetImage));
     // await handleSendData(wallet, npunch);
     // await getLeaderboardData();
