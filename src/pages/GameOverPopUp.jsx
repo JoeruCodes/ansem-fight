@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FiCopy } from "react-icons/fi";
+import { Context } from "../App";
 
 const GameOverPopUp = ({ isOpen, onClose, image, link }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const {setLoggerBuf} = useContext(Context);
+
   useEffect(() => {
     // Set a short timeout to simulate loading
     const timeout = setTimeout(() => {
@@ -12,6 +15,19 @@ const GameOverPopUp = ({ isOpen, onClose, image, link }) => {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  const onCopy = () => {
+    navigator.clipboard.writeText(link);
+    setLoggerBuf(b => {
+      const arr = [...b];
+      arr.push({
+        error: "Copied!",
+        color: "green"
+      });
+      return arr;
+    });
+  };
+
   return (
     <>
       {isOpen && (
@@ -32,9 +48,9 @@ const GameOverPopUp = ({ isOpen, onClose, image, link }) => {
               />
               <FiCopy
                 className="scale-[1.25] cursor-pointer"
-                onClick={() => navigator.clipboard.writeText(link)}
+                onClick={onCopy}
               />
-              <a href={link} className="visited:text-black">
+              <a href={link} target="_blank" rel="noopener noreferrer" className="visited:text-black">
                 <FaSquareXTwitter className="scale-[2] text-black cursor-pointer" />
               </a>
             </div>
