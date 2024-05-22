@@ -29,12 +29,10 @@ const MainGame = () => {
   const onLoad = async () => {
     await init();
     const npunch = await render(player, wifAmount);
-    setSNSLink(generateLink(npunch, wifAmount, tweetImage));
     // await handleSendData(wallet, npunch);
     // await getLeaderboardData();
     await handleSendData(npunch, wifAmount, referredBy, wallet)
     await getLeaderboardData(setLeaderboard);
-    setIsOpen(true);
     setGameCover(true);
     if (npunch > WIN_PUNCHES){
       if (player === "ansem"){
@@ -49,6 +47,8 @@ const MainGame = () => {
         setTweetImage(loseImage_cook);
       }
     }
+    setSNSLink(generateLink(npunch, wifAmount, tweetImage));
+    setIsOpen(true);
   };
 
   useEffect(() => {
