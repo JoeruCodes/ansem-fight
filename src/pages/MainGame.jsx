@@ -38,17 +38,20 @@ const MainGame = () => {
     if (npunch > WIN_PUNCHES) {
       if (player === "ansem") {
         setTweetImage(winImage);
+        setSNSLink(generateLink(npunch, wifAmount, winImage));
       } else {
         setTweetImage(t3_cook_win);
+        setSNSLink(generateLink(npunch, wifAmount, t3_cook_win));
       }
     } else {
       if (player === "ansem") {
         setTweetImage(loseImage);
+        setSNSLink(generateLink(npunch, wifAmount, loseImage));
       } else {
         setTweetImage(loseImage_cook);
+        setSNSLink(generateLink(npunch, wifAmount, loseImage_cook));
       }
     }
-    setSNSLink(generateLink(npunch, wifAmount, tweetImage));
   };
 
   useEffect(() => {
