@@ -38,18 +38,18 @@ const MainGame = () => {
     if (npunch > WIN_PUNCHES) {
       if (player === "ansem") {
         setTweetImage(winImage);
-        setSNSLink(generateLink(npunch, wifAmount, winImage));
+        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/oNrbl9E"));
       } else {
         setTweetImage(t3_cook_win);
-        setSNSLink(generateLink(npunch, wifAmount, t3_cook_win));
+        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/e5edNC9"));
       }
     } else {
       if (player === "ansem") {
         setTweetImage(loseImage);
-        setSNSLink(generateLink(npunch, wifAmount, loseImage));
+        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/0OJA4Pm"));
       } else {
         setTweetImage(loseImage_cook);
-        setSNSLink(generateLink(npunch, wifAmount, loseImage_cook));
+        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/lnUa62f"));
       }
     }
   };
