@@ -10,6 +10,7 @@ import kook from "../assets/cook.png";
 import * as SolanaWeb3 from "@solana/web3.js";
 import * as splToken from "@solana/spl-token";
 import { transfer } from "../helpers/tokenTransfer";
+import { validateSolAddress } from "../helpers/validation";
 export default function CharacterSelection() {
   const wallet = useWallet();
   const onPlayerChange = (e) => {
@@ -32,7 +33,17 @@ export default function CharacterSelection() {
       });
       return;
     }
-
+    if (referredBy && !validateSolAddress(referredBy)){
+      setLoggerBuf(b => {
+        const arr = [...b];
+        arr.push({
+          error: "Please put in a valid SolAddress",
+          color: "red"
+        });
+        return arr;
+      });
+      return;
+    }
     if (!player) {
       // Check if player is selected
       setLoggerBuf(b => {
@@ -73,7 +84,6 @@ export default function CharacterSelection() {
         });
         return;
       }
-  
       // const inputWif = prompt("Enter WIF amount (positive number):");
       // const wif = Number(inputWif);
       if (isNaN(wifAmount) || wifAmount <= 0) {
