@@ -104,7 +104,6 @@ const SPEED = 2;
 const WIN_PUNCHES = 13;
 export {
   SoundTypes,
-  dodgeProbs,
   imageSets,
   sounds,
   PunchesConfig,
