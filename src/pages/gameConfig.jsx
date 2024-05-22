@@ -23,7 +23,7 @@ import ansem_dodge_1 from "../assets/dodge_1.png";
 import ansem_dodge_2 from "../assets/dodge_2.png";
 import loseImage_cook from "../assets/lose_cook.png";
 import winImage_cook from "../assets/win_cook.png";
-import uppercut_cook from "../assets/uppercut_cook.png";
+import uppercut_cook from "../assets/uppercut_kook.png";
 import cook_t3_pwrup from "../assets/t33_rev.png";
 import t3_cook_win from "../assets/t3_cook_win.png";
 import dodge from "../assets/dodge.mp3";
