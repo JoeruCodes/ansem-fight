@@ -11,6 +11,7 @@ import { WIN_PUNCHES } from "./gameConfig";
 import winImage from "../assets/win.png";
 import loseImage from "../assets/lose.png";
 import loseImage_cook from "../assets/lose_cook.png";
+
 const MainGame = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
@@ -31,24 +32,23 @@ const MainGame = () => {
     const npunch = await render(player, wifAmount);
     // await handleSendData(wallet, npunch);
     // await getLeaderboardData();
-    await handleSendData(npunch, wifAmount, referredBy, wallet)
+    await handleSendData(npunch, wifAmount, referredBy, wallet);
     await getLeaderboardData(setLeaderboard);
     setGameCover(true);
-    if (npunch > WIN_PUNCHES){
-      if (player === "ansem"){
+    if (npunch > WIN_PUNCHES) {
+      if (player === "ansem") {
         setTweetImage(winImage);
-      }else{
+      } else {
         setTweetImage(t3_cook_win);
       }
-    }else{
-      if (player === "ansem"){
-        setTweetImage(loseImage)
-      }else{
+    } else {
+      if (player === "ansem") {
+        setTweetImage(loseImage);
+      } else {
         setTweetImage(loseImage_cook);
       }
     }
     setSNSLink(generateLink(npunch, wifAmount, tweetImage));
-    setIsOpen(true);
   };
 
   useEffect(() => {
@@ -61,6 +61,13 @@ const MainGame = () => {
       hasLoaded.current = true; // Mark as loaded
     }
   }, []);
+
+  // Effect to open the popup when SNSlink changes
+  useEffect(() => {
+    if (SNSlink && SNSlink !== "") {
+      setIsOpen(true);
+    }
+  }, [SNSlink]);
 
   const closePopUp = () => {
     setIsOpen(false);
