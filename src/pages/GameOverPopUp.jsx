@@ -21,7 +21,7 @@ const GameOverPopUp = ({ isOpen, onClose, image, link }) => {
     setLoggerBuf(b => {
       const arr = [...b];
       arr.push({
-        error: "Copied!",
+        error: "Link Copied!",
         color: "green"
       });
       return arr;
