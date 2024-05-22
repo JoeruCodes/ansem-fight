@@ -58,7 +58,8 @@ export default function GameImage() {
       >
         <GameCover />
       </div>
-      <div className="absolute z-[1000] bottom-0 left-0 space-y-2">
+      
+      <div className="fixed z-[1000] bottom-0 left-0 space-y-2">
         {loggerBuf &&
           loggerBuf.map((l, i) => {
             return (
