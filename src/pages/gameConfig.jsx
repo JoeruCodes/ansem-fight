@@ -27,6 +27,8 @@ import uppercut_cook from "../assets/uppercut_kook.png";
 import cook_t3_pwrup from "../assets/t33_rev.png";
 import t3_cook_win from "../assets/t3_cook_win.png";
 import dodge from "../assets/dodge.mp3";
+
+// DO NOT TOUCH THIS THE WASM CODE NEEDS THESE ASSETS... VITE REMOVES ANY UNUSED ASSETS AND HAS NO IDEA THAT THE WASM CODE NEEDS THE ASSETS TO BE THERE SO DONT BOTHER MODIFYING THIS CODE
 const SoundTypes = {
   PUNCH: "punch",
   WIN: "win",
@@ -34,11 +36,6 @@ const SoundTypes = {
   BELL: "bell",
   TIER3: "t3",
   dodge: "dodge",
-};
-const dodgeProbs = {
-  t1: 0.4,
-  t2: 0.3,
-  t3: 0.2,
 };
 const imageSets = {
   ansem_t1: [ansemPunch, t1ansemPunch],
@@ -50,36 +47,20 @@ const imageSets = {
   cook_dodge_1: [
     ansemPunch,
     cook_dodge_1,
-    cook_dodge_1,
-    cook_dodge_1,
-    cook_dodge_1,
-    cook_dodge_1,
     t1ansemPunch,
   ],
   cook_dodge_2: [
     ansemPunch,
-    cook_dodge_2,
-    cook_dodge_2,
-    cook_dodge_2,
-    cook_dodge_2,
     cook_dodge_2,
     t2ansemPunch,
   ],
   ansem_dodge_1: [
     ansemPunch,
     ansem_dodge_1,
-    ansem_dodge_1,
-    ansem_dodge_1,
-    ansem_dodge_1,
-    ansem_dodge_1,
     opponent_t1,
   ],
   ansem_dodge_2: [
     ansemPunch,
-    ansem_dodge_2,
-    ansem_dodge_2,
-    ansem_dodge_2,
-    ansem_dodge_2,
     ansem_dodge_2,
     opponent_t2,
   ],
