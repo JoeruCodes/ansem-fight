@@ -28,8 +28,6 @@ function HomePage() {
 
   return (
     <>
-      {/* <GameOverPopup isOpen={isOpen} onClose={closePopUp} image={tweetImage} link={SNSlink} /> */}
-
       <GameImage />
       <h1 className="custom-heading text-[61px] text-[#2196F3]">
         Ansem vs. Kook

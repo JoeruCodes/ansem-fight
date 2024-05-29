@@ -8,7 +8,6 @@ const GameOverPopUp = ({ isOpen, onClose, image, link }) => {
   const {setLoggerBuf} = useContext(Context);
 
   useEffect(() => {
-    // Set a short timeout to simulate loading
     const timeout = setTimeout(() => {
       setIsLoaded(true);
     }, 500);

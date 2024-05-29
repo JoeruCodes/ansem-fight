@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Context } from '../App';
-import '../App.css'; // Make sure to import the CSS file containing the animation
+import '../App.css';
 
  const DepositWifPopUp = ({ onClose, setOpen }) => {
   const [isLoaded, setIsLoaded] = useState(false);

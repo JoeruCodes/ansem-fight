@@ -20,7 +20,6 @@ export default function CharacterSelection() {
   const [transactionSuccess, setTransactionSuccess] = useState(false);
   const onCharacterSelected = async() => {
     if (!wallet.connected) {
-      // Check if wallet is connected
       setLoggerBuf(b => {
         const arr = [...b];
         arr.push({
@@ -43,7 +42,6 @@ export default function CharacterSelection() {
       return;
     }
     if (!player) {
-      // Check if player is selected
       setLoggerBuf(b => {
         const arr = [...b];
         arr.push({
@@ -59,7 +57,6 @@ export default function CharacterSelection() {
   const onCloseWIFD = async () => {
     try {
       if (!wallet.connected) {
-        // Check if wallet is connected
         setLoggerBuf(b => {
           const arr = [...b];
           arr.push({
@@ -82,8 +79,6 @@ export default function CharacterSelection() {
         });
         return;
       }
-      // const inputWif = prompt("Enter WIF amount (positive number):");
-      // const wif = Number(inputWif);
       if (isNaN(wifAmount) || wifAmount <= 0) {
         setLoggerBuf(b => {
           const arr = [...b];
@@ -102,7 +97,6 @@ export default function CharacterSelection() {
         setTransactionSuccess(true);
       }
     } catch (error) {
-      // Handle wallet transaction rejection error
       setLoggerBuf(b => {
         const arr = [...b];
         arr.push({
@@ -111,7 +105,6 @@ export default function CharacterSelection() {
         });
         return arr;
       });
-      // alert("Transaction was rejected. Please try again or check your wallet settings.");
       console.error("Wallet transaction rejected:", error);
     }
   }

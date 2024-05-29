@@ -13,8 +13,8 @@ export default function Leaderboard({ leaderboard }) {
         return "text-red-500";
       }
     }), 350);
-    return () => clearTimeout(t); // Correctly clear the timeout on cleanup
-  }, [changeColor]); // Depend on changeColor to toggle continuously
+    return () => clearTimeout(t);
+  }, [changeColor]);
 
   return (
     <div className="my-20">

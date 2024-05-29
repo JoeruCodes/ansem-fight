@@ -25,13 +25,11 @@ const MainGame = () => {
   const [SNSlink, setSNSLink] = useState("");
   const [gameCover, setGameCover] = useState(false);
   const wallet = useWallet();
-  const hasLoaded = useRef(false); // Ref to track if the component has already loaded
+  const hasLoaded = useRef(false);
   
   const onLoad = async () => {
     await init();
     const npunch = await render(player, wifAmount);
-    // await handleSendData(wallet, npunch);
-    // await getLeaderboardData();
     await handleSendData(npunch, wifAmount, referredBy, wallet);
     await getLeaderboardData(setLeaderboard);
     setGameCover(true);
@@ -56,16 +54,14 @@ const MainGame = () => {
 
   useEffect(() => {
     if (!hasLoaded.current) {
-      // Check if the component has already loaded
       const loadGame = async () => {
         await onLoad();
       };
       loadGame();
-      hasLoaded.current = true; // Mark as loaded
+      hasLoaded.current = true;
     }
   }, []);
 
-  // Effect to open the popup when SNSlink changes
   useEffect(() => {
     if (SNSlink && SNSlink !== "") {
       setIsOpen(true);

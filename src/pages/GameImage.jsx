@@ -1,24 +1,16 @@
 import { useContext } from "react";
 import React, { useEffect, useRef } from "react";
-import { useWallet } from "@solana/wallet-adapter-react";
-import { sounds } from "./gameConfig"; // Assuming these are extracted to a config file
+import { sounds } from "./gameConfig";
 import { Howl } from "howler";
 
 import "./Homepage.css";
 import { Context } from "../App";
-
 import "@solana/wallet-adapter-react-ui/styles.css";
-
 import Error from "./Error";
-
-//import jwt from "jsonwebtoken";
 import GameCover from "./GameCover";
 
 export default function GameImage() {
   const containerRef = useRef(null);
-
-  // const [currentImageArray, setCurrentImageArray] = useState(imageSets.default);
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const {
     loggerBuf,
@@ -28,17 +20,14 @@ export default function GameImage() {
     background: new Howl({ src: [sounds.background], loop: true, volume: 0.1 }),
   });
 
-
   useEffect(() => {
-    // Try to play background music on load
     try {
       soundRef.current.background.play();
     } catch (error) {
       console.error("Background music failed to play:", error);
     }
-
     return () => {
-      soundRef.current.background.stop(); // Stop background sound on unmount
+      soundRef.current.background.stop();
     };
   }, []);
 

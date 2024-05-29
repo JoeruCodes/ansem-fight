@@ -14,7 +14,6 @@ import ReferPage from "./ReferPage";
 import "./App.css";
 export const Context = React.createContext();
 function App() {
-  // Ensure the providers are set up correctly
   const network = WalletAdapterNetwork.Devnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
   const [loggerBuf, setLoggerBuf] = useState([]);
@@ -58,10 +57,6 @@ function App() {
     <Route path="/refer/:variable" element={<ReferPage />} />
     <Route path="/" element={<HomePage />} />
   </Routes>
-
-
-
-            {/* <HomePage /> */}
           </Context.Provider>
         </WalletModalProvider>
       </WalletProvider>
