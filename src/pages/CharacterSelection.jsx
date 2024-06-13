@@ -133,7 +133,7 @@ export default function CharacterSelection() {
             onChange={onPlayerChange}
             className="appearance-none"
           />{" "}
-          Kook
+          Andrew
           <img className={`absolute left-[27%] scale-[82%] top-[12%] hover:brightness-100 ${player==="kook" ? "brightness-100 -z-10" : "brightness-50 -z-20"}`} src={kook}/>
         </label>
       </div>

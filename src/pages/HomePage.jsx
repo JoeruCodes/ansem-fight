@@ -30,7 +30,7 @@ function HomePage() {
     <>
       <GameImage />
       <h1 className="custom-heading text-[61px] text-[#2196F3]">
-        Ansem vs. Kook
+        Ansem vs. Andrew
       </h1>
       <div className="card custom-heading text-[30px]">
         <p>WIF Deposited: {wifAmount}</p>
