@@ -30,7 +30,6 @@ export function playSound(sound) {
 
 export function Bgm(soundRef, bgSound, intervalId) {
   if (!soundRef.current) {
-    // Initialize and play the sound if it hasn't been initialized
     soundRef.current = new Howl({
       src: [bgSound],
       autoplay: true,
@@ -38,8 +37,6 @@ export function Bgm(soundRef, bgSound, intervalId) {
       volume: 0.1,
     });
   }
-
-  // Optional: Play the sound if not already playing (e.g., after being stopped manually elsewhere in your component)
   if (!soundRef.current.playing()) {
     soundRef.current.play();
   }

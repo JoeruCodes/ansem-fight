@@ -36,18 +36,18 @@ const MainGame = () => {
     if (npunch > WIN_PUNCHES) {
       if (player === "ansem") {
         setTweetImage(winImage);
-        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/oNrbl9E"));
+        setSNSLink(generateLink(npunch, wifAmount, import.meta.env.VITE_ANSEM_WIN_IMAGE));
       } else {
         setTweetImage(t3_cook_win);
-        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/e5edNC9"));
+        setSNSLink(generateLink(npunch, wifAmount, import.meta.env.VITE_ANDREW_WIN_IMAGE));
       }
     } else {
       if (player === "ansem") {
         setTweetImage(loseImage);
-        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/0OJA4Pm"));
+        setSNSLink(generateLink(npunch, wifAmount, import.meta.env.VITE_ANSEM_LOSE_IMAGE));
       } else {
         setTweetImage(loseImage_cook);
-        setSNSLink(generateLink(npunch, wifAmount, "https://imgur.com/lnUa62f"));
+        setSNSLink(generateLink(npunch, wifAmount, import.meta.env.VITE_ANDREW_LOSE_IMAGE));
       }
     }
   };

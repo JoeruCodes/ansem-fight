@@ -55,4 +55,3 @@ export default function GameImage() {
     </>
   );
 }
-// {!characterSelection && currentImageArray[currentImageIndex] === ansem && <div className="absolute bottom-8 scale-[135%]"><DepositButton onDeposit={handleOnDeposit} isDisabled={false}/></div>}

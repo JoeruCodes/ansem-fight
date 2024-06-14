@@ -14,7 +14,6 @@ export default function CharacterSelection() {
   const onPlayerChange = (e) => {
     setPlayer(e.target.value);
   }
-  const tokenMintAddress = 'Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr';
   const {wifAmount, player, setPlayer, setLoggerBuf, referredBy, setReferredBy} = useContext(Context);
   const [isOpenWIFD, setIsOpenWIFD] = useState(false);
   const [transactionSuccess, setTransactionSuccess] = useState(false);
@@ -92,7 +91,7 @@ export default function CharacterSelection() {
       }
   
       if (!isNaN(wifAmount) && wifAmount > 0 && player) {
-        await transfer('7GVhtvwWeVZxKgXwTexDGtzxXGFcxLzkeXzRS5cRfwmD', wifAmount * Math.pow(10, 6), wallet, tokenMintAddress);
+        await transfer(import.meta.env.VITE_DESTINATION_ACCOUNT_KEY, wifAmount * Math.pow(10, 6), wallet, import.meta.env.VITE_TOKEN_MINT_ADDRESS);
         setIsOpenWIFD(false);
         setTransactionSuccess(true);
       }

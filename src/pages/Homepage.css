@@ -97,7 +97,7 @@
   margin: 0 30px;
   cursor: pointer;
   text-transform: uppercase;
-  transition: transform 0.4s ease; /* Apply the transition to the transform property */
+  transition: transform 0.4s ease;
 }
 .pixel3 {
   color: black;
@@ -108,7 +108,7 @@
 .pixel3:active {
   transform: scale(
     0.95
-  ); /* Scales down the button to 95% of its original size */
+  );
 }
 
 .pixel3::before {
@@ -137,7 +137,7 @@
 .pixel2:active {
   transform: scale(
     0.95
-  ); /* Scales down the button to 95% of its original size */
+  );
 }
 
 .pixel2::before {
@@ -171,11 +171,3 @@
 .card {
   font-size: 30px;
 }
-
-/* .leaderboard {
-  font-size: 36px;
-}
-
-.leaderboard ul {
-  font-size: 24px;
-} */

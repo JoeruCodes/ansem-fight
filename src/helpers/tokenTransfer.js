@@ -32,7 +32,6 @@ const getOrCreateAssociatedTokenAccount = async (connection,
     return account;
 }
 export const transfer= async (toAddress,amount, wallet, tokenMintAddress)=> {
-  //if (!wallet.connected || !wallet.publicKey) {
     if (!wallet.connected) {
       setLoggerBuf(b => {
         const arr = [...b];
@@ -44,7 +43,7 @@ export const transfer= async (toAddress,amount, wallet, tokenMintAddress)=> {
       });
     return;
   }
-const connection = new SolanaWeb3.Connection("https://api.devnet.solana.com/");
+const connection = new SolanaWeb3.Connection(import.meta.env.VITE_CLUSTER === "DEVNET" ? "https://api.devnet.solana.com/" : import.meta.env.VITE_CLUSTER === "TESTNET" ? "https://api.testnet.solana.com" : import.meta.env.VITE_CLUSTER === "MAINNET" ? "https://api.mainnet-beta.solana.com": "");
 const mintPublicKey = new SolanaWeb3.PublicKey(tokenMintAddress);  
 const {TOKEN_PROGRAM_ID} = splToken;
 const fromTokenAccount = await getOrCreateAssociatedTokenAccount(
@@ -60,7 +59,6 @@ const associatedDestinationTokenAddr = await getOrCreateAssociatedTokenAccount(
                 destPublicKey,
                 wallet
               );
-//const instructions: solanaWeb3.TransactionInstruction[] = [];
 const instructions = [];
 
 instructions.push(
@@ -78,16 +76,11 @@ const transaction = new SolanaWeb3.Transaction().add(...instructions);
 const blockhash = await connection.getLatestBlockhash();
 transaction.feePayer = wallet.publicKey;
 transaction.recentBlockhash = blockhash.blockhash;
-//change1
 const signed = await wallet.signTransaction(transaction);
 const transactionSignature = await connection.sendRawTransaction(
                 signed.serialize(),
               { skipPreflight: true }
               );
-// const transactionSignature = await connection.sendRawTransaction(
-//                 transaction.serialize(),
-//                 { skipPreflight: true }
-//               );
               const strategy = {
                 blockhash: blockhash.blockhash,
                 lastValidBlockHeight: blockhash.lastValidBlockHeight,

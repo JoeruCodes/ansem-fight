@@ -16,11 +16,11 @@ export const handleSendData = async (randPunches, wif, referredBy, wallet) => {
   if (userWon) {
     const finishPayload = {
       wallet_address: wallet.publicKey.toString(),
-      win: 1, // Set to 1 if the user won
+      win: 1, 
     };
     try {
       const finishResponse = await fetch(
-        "https://ansem-backend-production.up.railway.app/api/finish",
+        `${import.meta.env.VITE_BACKEND_URL}/api/finish`,
         {
           method: "POST",
           headers: {
@@ -44,7 +44,7 @@ export const handleSendData = async (randPunches, wif, referredBy, wallet) => {
 export const sendData = async (userData) => {
   try {
     const response = await fetch(
-      "https://ansem-backend-production.up.railway.app/api/wallet",
+      `${import.meta.env.VITE_BACKEND_URL}/api/wallet`,
       {
         method: "POST",
         headers: {
@@ -61,7 +61,6 @@ export const sendData = async (userData) => {
     const responseData = await response.json();
     console.log("Server Response:", responseData);
 
-    //return responseData;
   } catch (error) {
     console.error("Error sending data:", error);
   }
@@ -70,14 +69,13 @@ export const sendData = async (userData) => {
 export const getLeaderboardData = async (updateLeaderboard) => {
   try {
     const leaderboardResponse = await fetch(
-      "https://ansem-backend-production.up.railway.app/api/leaderboard",
+      `${import.meta.env.VITE_BACKEND_URL}/api/leaderboard`,
     );
     if (!leaderboardResponse.ok) {
       throw new Error("Failed to fetch leaderboard data");
     }
     const leaderboardData = await leaderboardResponse.json();
     console.log("Leaderboard Data:", leaderboardData);
-    // Perform calculations for top 10 players based on the received data
 
     updateLeaderboard(leaderboardData);
   } catch (error) {

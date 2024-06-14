@@ -12,7 +12,7 @@ function HomePage() {
   };
   const fetchInitialLeaderboard = async () => {
     try {
-      const leaderboardResponse = await fetch('https://ansem-backend-production.up.railway.app/api/leaderboard');
+      const leaderboardResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/leaderboard`);
       if (!leaderboardResponse.ok) {
         throw new Error('Failed to fetch leaderboard data');
       }

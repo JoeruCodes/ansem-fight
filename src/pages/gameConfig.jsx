@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Howl } from "howler";
+//FILE USED TO PREVENT VITE FROM DELETING THE ASSETS ON BUILD
 import ansem from "../assets/start.png";
 import ansemPunch from "../assets/idlee.png";
 import t1ansemPunch from "../assets/T1-Ansem-Punch2.png";
